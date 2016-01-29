@@ -11,8 +11,8 @@ import javax.xml.datatype.DatatypeConfigurationException;
 
 
 
-import org.eclipse.lyo.adapter.amesim.resources.AMESimComponent;
-import org.eclipse.lyo.adapter.amesim.resources.AMESimParameter;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimComponent;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimParameter;
 import org.eclipse.lyo.oslc4j.core.exception.OslcCoreApplicationException;
 import org.eclipse.lyo.oslc4j.core.model.AbstractResource;
 import org.eclipse.lyo.oslc4j.core.model.QueryCapability;

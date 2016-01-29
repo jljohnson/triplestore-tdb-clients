@@ -70,8 +70,8 @@ public class GETSimulinkParameter {
 		Response response = rdfclient.target(requirementURI)
 				.request("application/rdf+xml").get();
 		System.out.println(response.getStatus());
-		org.eclipse.lyo.adapter.simulink.resources.SimulinkParameter integrityRequirement = response
-				.readEntity(org.eclipse.lyo.adapter.simulink.resources.SimulinkParameter.class);
+		edu.gatech.mbsec.adapter.simulink.resources.SimulinkParameter integrityRequirement = response
+				.readEntity(edu.gatech.mbsec.adapter.simulink.resources.SimulinkParameter.class);
 		System.out.println(integrityRequirement.getName());
 		
 		Object[] objects = new Object[] { integrityRequirement };

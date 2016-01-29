@@ -44,7 +44,7 @@ import com.hp.hpl.jena.rdf.model.RDFWriter;
 import com.hp.hpl.jena.tdb.TDBFactory;
 import com.hp.hpl.jena.util.FileManager;
 
-import org.eclipse.lyo.adapter.amesim.resources.AMESimComponent;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimComponent;
 
 
 public class GETAllAMESimComponentsAndPopulateTriplestoreWithPOJOs {

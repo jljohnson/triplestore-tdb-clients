@@ -9,12 +9,12 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Response;
 import javax.xml.datatype.DatatypeConfigurationException;
 
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkBlock;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkInputPort;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkLine;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkModel;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkOutputPort;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkParameter;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkBlock;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkInputPort;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkLine;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkModel;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkOutputPort;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkParameter;
 import org.eclipse.lyo.oslc4j.core.exception.OslcCoreApplicationException;
 import org.eclipse.lyo.oslc4j.core.model.AbstractResource;
 import org.eclipse.lyo.oslc4j.core.model.QueryCapability;

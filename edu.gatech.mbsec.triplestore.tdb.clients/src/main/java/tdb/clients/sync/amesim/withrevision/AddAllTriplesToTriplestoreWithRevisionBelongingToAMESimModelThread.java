@@ -10,9 +10,9 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Response;
 import javax.xml.datatype.DatatypeConfigurationException;
 
-import org.eclipse.lyo.adapter.amesim.resources.AMESimComponent;
-import org.eclipse.lyo.adapter.amesim.resources.AMESimLine;
-import org.eclipse.lyo.adapter.amesim.resources.AMESimParameter;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimComponent;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimLine;
+import edu.gatech.mbsec.adapter.amesim.resources.AMESimParameter;
 import org.eclipse.lyo.adapter.subversion.SubversionFile;
 import org.eclipse.lyo.oslc4j.core.exception.OslcCoreApplicationException;
 import org.eclipse.lyo.oslc4j.core.model.AbstractResource;
