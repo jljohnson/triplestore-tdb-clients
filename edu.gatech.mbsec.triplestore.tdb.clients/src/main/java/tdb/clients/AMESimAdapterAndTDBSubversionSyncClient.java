@@ -52,9 +52,7 @@ import com.hp.hpl.jena.update.UpdateExecutionFactory;
 import com.hp.hpl.jena.update.UpdateFactory;
 import com.hp.hpl.jena.update.UpdateProcessor;
 import com.hp.hpl.jena.update.UpdateRequest;
-import com.mks.api.response.Field;
-import com.mks.api.response.Item;
-import com.mks.api.response.ItemList;
+
 
 import threads.AddAllAMESimParametersToTriplestoreThread;
 import threads.AddAllTriplesToTriplestoreBelongingToMagicDrawModelThread;

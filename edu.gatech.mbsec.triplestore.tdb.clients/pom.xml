@@ -126,6 +126,7 @@
 			<type>war</type>
 		</dependency>
 
+<!-- 
 		<dependency>
 			<groupId>com.ptc.integrity</groupId>
 			<artifactId>mksapi</artifactId>
@@ -133,7 +134,7 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/lib/mksapi.jar</systemPath>
 		</dependency>
-
+-->
 		<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>jena-tdb</artifactId>
