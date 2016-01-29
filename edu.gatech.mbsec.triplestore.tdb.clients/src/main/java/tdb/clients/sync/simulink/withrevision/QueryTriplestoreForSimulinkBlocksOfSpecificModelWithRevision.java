@@ -36,8 +36,8 @@ public class QueryTriplestoreForSimulinkBlocksOfSpecificModelWithRevision {
 //			"SELECT ?simulinkResource ?value " +
 			"WHERE {" +
 			"    ?simulinkResource  ?p ?o. " +	
-			"FILTER ( regex(str(?simulinkResource), \"/services/httpswdxcnd519309s.repos.comsvnsimulinkrepository---model11/blocks\") ) " +
-			"FILTER ( regex(str(?simulinkResource), \"---revision5\") ) " +
+			"FILTER ( regex(str(?simulinkResource), \"/services/httpskoneksys118080svnrepository1---model11/blocks\") ) " +
+//			"FILTER ( regex(str(?simulinkResource), \"---revision5\") ) " +
 //			"FILTER ( regex(str(?simulinkResource), \"/services/httpskoneksys118080svnrepository3test1test2---model4\") ) " +
 //			"    ?simulinkResource  simulink_parameter:value ?value . " +
 //			"FILTER ( regex(str(?simulinkResource), \"/services/httpskoneksys118080svnrepository3test1test2test3---sldemo_househeat/parameters/House::R-value::Value\") ) " +

@@ -30,7 +30,7 @@ public class QueryTriplestoreForSimulinkParameterOfSpecificModelWithRevision {
 		// Create a new query
 		String queryString = 
 			"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-			"PREFIX simulink: <http://www.mathworks.com/products/simulink/> " +
+			"PREFIX simulink: <http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#> " +
 			"PREFIX simulink_parameter: <http://www.mathworks.com/products/simulink/Parameter/> " +
 //			"SELECT ?simulinkResource " +
 			"SELECT ?simulinkResource ?value " +
@@ -39,8 +39,8 @@ public class QueryTriplestoreForSimulinkParameterOfSpecificModelWithRevision {
 //			"FILTER ( regex(str(?simulinkResource), \"/services/httpskoneksys118080svnrepository3test1test2test3---sldemo_househeat\") ) " +
 //			"FILTER ( regex(str(?simulinkResource), \"---revision8\") ) " +
 //			"FILTER ( regex(str(?simulinkResource), \"/services/httpskoneksys118080svnrepository3test1test2test3---sldemo_househeat\") ) " +
-			"    ?simulinkResource  simulink_parameter:value ?value . " +
-			"FILTER ( regex(str(?simulinkResource), \"/services/httpswdxcnd519309s.repos.comsvnsimulinkrepository---model11/parameters/Constant::Value\") ) " +
+			"    ?simulinkResource  simulink:Parameter_value ?value . " +
+			"FILTER ( regex(str(?simulinkResource), \"/services/httpskoneksys118080svnrepository1---model11/parameters/Constant::Value\") ) " +
 			"      }";
 		Query query = QueryFactory.create(queryString);
 
