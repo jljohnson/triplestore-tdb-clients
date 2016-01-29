@@ -1,0 +1,8 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+			PREFIX amesim: <http://www.lmsintl.com/LMS-Imagine-Lab-AMESim/> 
+			PREFIX amesim_parameter: <http://www.lmsintl.com/LMS-Imagine-Lab-AMESim/Parameter/> 
+			SELECT ?amesimResource ?value 
+			WHERE {
+			    ?amesimResource  amesim_parameter:value ?value . 
+			FILTER ( regex(str(?amesimResource), \"/services/httpswdxcnd519309s.repos.comsvnamesimrepository---FlatTwin/parameters/length::simple_crank\") ) 
+			      }

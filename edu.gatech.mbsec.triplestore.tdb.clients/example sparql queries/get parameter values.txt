@@ -1,0 +1,4 @@
+SELECT ?s ?o
+WHERE {
+?s <http://www.ptc.com/solutions/integrity/ProductRequirementDocument/parameters> ?o
+}

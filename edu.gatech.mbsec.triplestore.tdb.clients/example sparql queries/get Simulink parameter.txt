@@ -1,0 +1,9 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+			PREFIX simulink: <http://www.mathworks.com/products/simulink/> 
+			PREFIX simulink_parameter: <http://www.mathworks.com/products/simulink/Parameter/> 
+
+			SELECT ?simulinkResource ?value 
+			WHERE {
+			    ?simulinkResource  simulink_parameter:value ?value . 
+			FILTER ( regex(str(?simulinkResource), "/services/httpswdxcnd519309s.repos.comsvnsimulinkrepository---model11/parameters/Constant::Value") ) 
+			      }
