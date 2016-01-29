@@ -30,17 +30,17 @@ public class QueryTriplestoreForMagicDrawBlockOfSpecificModelWithRevision {
 		// Create a new query
 		String queryString = 
 			"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-			"PREFIX sysml: <http://www.omg.org/sysml/> " +
-			"PREFIX sysml_namedelement: <http://www.omg.org/sysml/NamedElement/> " +
+			"PREFIX sysml: <http://localhost:8080/oslc4jmagicdraw/services/sysml-rdfvocabulary#> " +
+			"PREFIX sysml_namedelement: <http://localhost:8080/oslc4jmagicdraw/services/sysml-rdfvocabulary#NamedElement/> " +
 //			"SELECT ?magicdrawResource " +
 			"SELECT DISTINCT ?magicdrawResource ?name " +
 			"WHERE {" +
 //			"    ?magicdrawResource  ?p ?o. " +	
 //			"FILTER ( regex(str(?magicdrawResource), \"/services/httpskoneksys118080svnrepository3test1test2test3---sldemo_househeat\") ) " +
-			"FILTER ( regex(str(?magicdrawResource), \"---revision8\") ) " +
+//			"FILTER ( regex(str(?magicdrawResource), \"---revision8\") ) " +
 //			"FILTER ( regex(str(?magicdrawResource), \"/services/httpskoneksys118080svnrepository3test1test2test3---sldemo_househeat\") ) " +
-			"    ?magicdrawResource  sysml_namedelement:name ?name . " +
-			"FILTER ( regex(str(?magicdrawResource), \"/services/httpswdxcnd519309s.repos.comsvnmagicdrawrepository---Wired_Camera_Example/blocks/Blocks::Camera\") ) " +
+			"    ?magicdrawResource  sysml:NamedElement_name ?name . " +
+			"FILTER ( regex(str(?magicdrawResource), \"/services/httpskoneksys118080svnmagicdrawrepository---Wired_Camera_Example/blocks/Blocks::Camera\") ) " +
 			"      }";
 		Query query = QueryFactory.create(queryString);
 

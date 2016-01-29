@@ -30,14 +30,14 @@ public class QueryTriplestoreForMagicDrawBlocksOfSpecificModelWithRevision {
 		// Create a new query
 		String queryString = 
 			"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-				"PREFIX sysml: <http://www.omg.org/sysml/> " +
-				"PREFIX sysml_namedelement: <http://www.omg.org/sysml/NamedElement/> " +
+				"PREFIX sysml: <http://localhost:8080/oslc4jmagicdraw/services/sysml-rdfvocabulary#> " +
+				"PREFIX sysml_namedelement: <http://localhost:8080/oslc4jmagicdraw/services/sysml-rdfvocabulary#NamedElement/> " +
 			"SELECT DISTINCT ?magicdrawResource " +
 //			"SELECT ?magicdrawResource ?name " +
 			"WHERE {" +
 			"    ?magicdrawResource  ?p ?o. " +	
-			"FILTER ( regex(str(?magicdrawResource), \"Wired_Camera_Example/blocks\") ) " +
-			"FILTER ( regex(str(?magicdrawResource), \"---revision2\") ) " +
+			"FILTER ( regex(str(?magicdrawResource), \"httpskoneksys118080svnmagicdrawrepository---Wired_Camera_Example/blocks/Blocks::Camera\") ) " +
+//			"FILTER ( regex(str(?magicdrawResource), \"---revision2\") ) " +
 			"      }";
 		Query query = QueryFactory.create(queryString);
 
