@@ -83,31 +83,31 @@ Note: after launching Fuseki, you can no longer perform SPARQL queries against t
 5. Click Next, only select the master branch
 6. Click Next until Finish.
 
-###2.	Importing the triplestore project into the Eclipse workspace
+###2.	Importing the edu.gatech.mbsec.triplestore.tdb.clients project into the Eclipse workspace
 
-1. In the Git repositories view, right-click triplestore and select “Import Projects”. Click Next until Finish. The triplestore project will be in the Eclipse workspace.
+1. In the Git repositories view, right-click edu.gatech.mbsec.triplestore.tdb.clients and select “Import Projects”. Click Next until Finish. The edu.gatech.mbsec.triplestore.tdb.clients project will be in the Eclipse workspace.
 2. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
-3. Expand the triplestore project
+3. Expand the edu.gatech.mbsec.triplestore.tdb.clients project
 4. Right click pom.xml -> Run As -> Maven clean
 5. Right click pom.xml -> Run As -> Maven install 
-6.	If there is a red error mark next to the triplestore project, select the project. Right-click->Maven->Update Project… and click OK 
+6.	If there is a red error mark next to the edu.gatech.mbsec.triplestore.tdb.clients project, select the project. Right-click->Maven->Update Project… and click OK 
 
 ###3.	Configuring triplestore location
 
 1. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer). By default, it is already visible at the left of the screen.
-2. Select the just created triplestore project and expand it
-3. Choose an empty folder as triplestore location, such as the mytriplestore folder located in the Eclipse triplestore project. Your user account needs to have read/write permission to that folder. 
+2. Select the just created edu.gatech.mbsec.triplestore.tdb.clients project and expand it
+3. Choose an empty folder as triplestore location, such as the mytriplestore folder located in the Eclipse edu.gatech.mbsec.triplestore.tdb.clients project. Your user account needs to have read/write permission to that folder. 
 4. In the Project Explorer view, expand the triplestore Eclipse project, and expand the triplestore configuration folder
 5. Open the config.properties file 
 6. Specify the location of the triplestore without trailing slash at the end, for example
  ```text
-triplestoreDirectory = C:/Users/Axel/git/triplestore/triplestore/mytriplestore
+triplestoreDirectory = C:/Users/Axel/git/triplestore/edu.gatech.mbsec.triplestore.tdb.clients/mytriplestore
 ```
 
 ###4.	Creating triplestore 
 
 1. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
-2. Expand the triplestore project
+2. Expand the edu.gatech.mbsec.triplestore.tdb.clients project
 3. Expand the src/main/java folder
 4. Expand the tbd.clients package
 5. Right click **CreateTriplestore.java** -> Run As -> Java Application
@@ -118,7 +118,7 @@ triplestoreDirectory = C:/Users/Axel/git/triplestore/triplestore/mytriplestore
 ###5.	Populating triplestore with Simulink Blocks
 
 1. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
-2. Expand the triplestore project
+2. Expand the edu.gatech.mbsec.triplestore.tdb.clients project
 3. Expand the src/main/java folder
 4. 2 Options
   1. Option A: Populate triplestore with Simulink Blocks described as RDF on file (no need to run Simulink adapter)
@@ -146,7 +146,7 @@ Note: If Fuseki is running, you can only populate the triplestore through Fuseki
 ###6.	Populating triplestore with SysML Blocks
 
 1. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
-2. Expand the triplestore project
+2. Expand the edu.gatech.mbsec.triplestore.tdb.clients project
 3. Expand the src/main/java folder
 4. 2 Options
   1. Option A: Populate triplestore with SysML Blocks described as RDF on file (no need to run MagicDraw SysML adapter)
@@ -169,7 +169,7 @@ Note: If Fuseki is running, you can only populate the triplestore through Fuseki
 ###7.	Querying triplestore for Simulink blocks 
 
 1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
-2.	Expand the triplestore project
+2.	Expand the edu.gatech.mbsec.triplestore.tdb.clients project
 3.	Expand the src/main/java folder
 4.	Expand the tbd.clients package
 5.	Right click **QueryTriplestoreForSimulinkBlocks.java**-> Run As -> Java Application
@@ -178,7 +178,7 @@ Note: If Fuseki is running, you can only populate the triplestore through Fuseki
 ###8.	Querying triplestore for SysML blocks 
 
 1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
-2.	Expand the triplestore project
+2.	Expand the edu.gatech.mbsec.triplestore.tdb.clients project
 3.	Expand the src/main/java folder
 4.	Expand the tbd.clients package
 5.	Right click **QueryTriplestoreForSysMLBlocks.java**-> Run As -> Java Application
@@ -187,7 +187,7 @@ Note: If Fuseki is running, you can only populate the triplestore through Fuseki
 ###9.	Querying triplestore for MBSE (SysML/Simulink/AMESim) blocks 
 
 1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
-2.	Expand the triplestore project
+2.	Expand the edu.gatech.mbsec.triplestore.tdb.clients project
 3.	Expand the src/main/java folder
 4.	Expand the tbd.clients package
 5.	Right click **QueryTriplestoreForMBSEBlocks.java**-> Run As -> Java Application
@@ -196,7 +196,7 @@ Note: If Fuseki is running, you can only populate the triplestore through Fuseki
 ###10.	Deleting content (triples) in triplestore 
 
 1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
-2.	Expand the triplestore project
+2.	Expand the edu.gatech.mbsec.triplestore.tdb.clients project
 3.	Expand the src/main/java folder
 4.	Expand the tbd.clients package
 5.	Right click **DeleteAllTriplesInTriplestore.java** -> Run As -> Java Application
@@ -205,7 +205,7 @@ Note: If Fuseki is running, you can only populate the triplestore through Fuseki
 ###11.	Querying triplestore for all triples 
 
 1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
-2.	Expand the triplestore project
+2.	Expand the edu.gatech.mbsec.triplestore.tdb.clients project
 3.	Expand the src/main/java folder
 4.	Expand the tbd.clients package
 5.	Right click **QueryTriplestoreForAnyTriple.java** -> Run As -> Java Application
@@ -215,7 +215,7 @@ Note: If Fuseki is running, you can only populate the triplestore through Fuseki
 
 1.	Before running any queries using the SPARQL endpoint, make sure that the triplestore has been populated with triples 
 2.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
-3.	Expand the triplestore project
+3.	Expand the edu.gatech.mbsec.triplestore.tdb.clients project
 4.	Expand the **apache-jena-fuseki-2.3.0** folder. The batch scripts to launch Fuseki are in that folder
 6.	Launch a command prompt (In Windows, click on Start and type cmd in the search field and selecting the application named cmd)
 7.	Change the directory of the command prompt to the apache-jena-fuseki-2.3.0 folder using the cd command. For example type in the command prompt following command:
