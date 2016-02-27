@@ -142,3 +142,98 @@ Warning: if you try to populate the triplestore using the TDB API while Fuseki i
 Exception in thread "main" com.hp.hpl.jena.tdb.TDBException: Can't open database at location ... as it is already locked by the process with PID 7388.  TDB databases do not permit concurrent usage across JVMs so in order to prevent possible data corruption you cannot open this location from the JVM that does not own the lock for the dataset
 
 Note: If Fuseki is running, you can only populate the triplestore through Fuseki.
+
+###6.	Populating triplestore with SysML Blocks
+
+1. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+2. Expand the triplestore project
+3. Expand the src/main/java folder
+4. 2 Options
+  1. Option A: Populate triplestore with SysML Blocks described as RDF on file (no need to run MagicDraw SysML adapter)
+    1. Expand the tbd.clients package
+    2. Right click **PopulateTriplestoreWithSysMLBlocksAsRDF.java**-> Run As -> Java Application (the sample RDF file is located in the folder named sample rdf)
+  2. Option B: Populate triplestore with SysML Blocks from running adapter 
+    1. Run the OSLC MagicDraw SysML Adapter as described in the [Instructions to install and run the OSLC MagicDraw SysML Adapter](https://github.com/ld4mbse/oslc-adapter-magicdraw/blob/master/README.md)
+    2. 2 Options
+    3. Option B1: Retrieve SysML Blocks from adapter and save them on file in RDF, and then populate triplestore based on RDF document
+      1.	Expand the adapter.clients package
+      2.	Right click **GETSysMLBlocksAndSaveAsRDF.java**-> Run As -> Java Application
+      3.	In the console view, you should see the statement “SysML blocks from adapter saved as RDF on file”
+      4.	Expand the tdb.clients package
+      5.	Right click **PopulateTriplestoreWithSysMLBlocksAsRDF.java**-> Run As -> Java Application
+    2.	Option B2: Retrieve SysML Blocks from adapter and directly populate triplestore based on in-memory POJOs
+      1.	Expand the tdb.clients package
+      2.	Right click **GETSysMLBlocksAndPopulateTriplestoreWithPOJOs.java**-> Run As -> Java Application
+      2.	In the console view, you should see the statement “SysML Blocks added to triplestore”
+     
+###7.	Querying triplestore for Simulink blocks 
+
+1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+2.	Expand the triplestore project
+3.	Expand the src/main/java folder
+4.	Expand the tbd.clients package
+5.	Right click **QueryTriplestoreForSimulinkBlocks.java**-> Run As -> Java Application
+6.	In the console view, you should see the URIs of resources of type Simulink block 
+
+###8.	Querying triplestore for SysML blocks 
+
+1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+2.	Expand the triplestore project
+3.	Expand the src/main/java folder
+4.	Expand the tbd.clients package
+5.	Right click **QueryTriplestoreForSysMLBlocks.java**-> Run As -> Java Application
+6.	In the console view, you should see the URIs of resources of type SysML block   
+
+###9.	Querying triplestore for MBSE (SysML/Simulink/AMESim) blocks 
+
+1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+2.	Expand the triplestore project
+3.	Expand the src/main/java folder
+4.	Expand the tbd.clients package
+5.	Right click **QueryTriplestoreForMBSEBlocks.java**-> Run As -> Java Application
+6.	In the console view, you should see the URIs of resources of type MBSE block
+
+###10.	Deleting content (triples) in triplestore 
+
+1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+2.	Expand the triplestore project
+3.	Expand the src/main/java folder
+4.	Expand the tbd.clients package
+5.	Right click **DeleteAllTriplesInTriplestore.java** -> Run As -> Java Application
+6.	In the console view, you should see the statement “All triples deleted in triplestore”
+
+###11.	Querying triplestore for all triples 
+
+1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+2.	Expand the triplestore project
+3.	Expand the src/main/java folder
+4.	Expand the tbd.clients package
+5.	Right click **QueryTriplestoreForAnyTriple.java** -> Run As -> Java Application
+6.	In the console view, you should see this if your triplestore is empty
+
+###12.	Launching Fuseki as SPARQL HTTP endpoint to the triplestore
+
+1.	Before running any queries using the SPARQL endpoint, make sure that the triplestore has been populated with triples 
+2.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+3.	Expand the triplestore project
+4.	Expand the **apache-jena-fuseki-2.3.0** folder. The batch scripts to launch Fuseki are in that folder
+6.	Launch a command prompt (In Windows, click on Start and type cmd in the search field and selecting the application named cmd)
+7.	Change the directory of the command prompt to the apache-jena-fuseki-2.3.0 folder using the cd command. For example type in the command prompt following command:
+ ```text
+cd C:\Users\Axel\git\triplestore-tdb-clients\triplestore\apache-jena-fuseki-2.3.0
+```
+8.	Launch Fuseki by typing in following command including the location of the triplestore as well as a name for the dataset managed by that triplestore (Example: mydataset):
+ ```text
+fuseki-server --update --loc=C:\Users\Axel\git\triplestore-tdb-clients\triplestore\mytriplestore /mydataset
+```
+9.	Open Fuseki by going in your browser to localhost:3030 
+10.	Click on the query button next to the name of your dataset
+11.	12.	Perform a manual query through the SPARQL endpoint by typing in following query to retrieve all Simulink blocks
+ ```text
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX simulink: <http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#>  
+SELECT ?simulinkBlock 
+WHERE { 
+    ?simulinkBlock  rdf:type simulink:Block . 			
+}
+```
