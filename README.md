@@ -85,7 +85,7 @@ Note: after launching Fuseki, you can no longer perform SPARQL queries against t
 
 ###2.	Importing the edu.gatech.mbsec.triplestore.tdb.clients project into the Eclipse workspace
 
-1. In the Git repositories view, right-click edu.gatech.mbsec.triplestore.tdb.clients and select “Import Projects”. Click Next until Finish. The edu.gatech.mbsec.triplestore.tdb.clients project will be in the Eclipse workspace.
+1. In the Git repositories view, right-click triplestore-tdb-clients and select “Import Projects”. Click Next until Finish. The edu.gatech.mbsec.triplestore.tdb.clients project will be in the Eclipse workspace.
 2. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
 3. Expand the edu.gatech.mbsec.triplestore.tdb.clients project
 4. Right click pom.xml -> Run As -> Maven clean
