@@ -69,3 +69,26 @@ and show value of MagicDraw value properties saved in the triplestore.
 Note: after launching Fuseki, you can no longer perform SPARQL queries against the triplestore using the Java API. Every interaction with the triplestore has to go through the SPARQL HTTP endpoint of Fuseki. 
 
 
+#Seeting up an RDF Triplestore and SPARQL HTTP endpoint
+
+##Instructions to install and run a triplestore and a SPARQL endpoint to send queries
+
+
+###1.	Downloading the triplestore repository
+
+1. Open the Git Repositories View (Window -> Show View -> type “Git Repositories” in the search field)
+2. Click on the Clone Repository icon  
+3. In the URI field, paste the following URL: https://github.com/ld4mbse/triplestore-tdb-clients.git
+4. The Host and Repository fields will autofill.
+5. Click Next, only select the master branch
+6. Click Next until Finish.
+
+###2.	Importing the triplestore project into the Eclipse workspace
+
+1. In the Git repositories view, right-click triplestore and select “Import Projects”. Click Next until Finish. The triplestore project will be in the Eclipse workspace.
+2. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+3. Expand the triplestore project
+4. Right click pom.xml -> Run As -> Maven clean
+5. Right click pom.xml -> Run As -> Maven install 
+6.	If there is a red error mark next to the triplestore project, select the project. Right-click->Maven->Update Project… and click OK 
+
