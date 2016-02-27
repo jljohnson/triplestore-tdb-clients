@@ -1,5 +1,5 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-PREFIX simulink: <http://www.mathworks.com/products/simulink/> 
+PREFIX simulink: <http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#> 
 SELECT ?simulinkBlock 
 WHERE { 
     ?simulinkBlock  rdf:type simulink:Block . 			

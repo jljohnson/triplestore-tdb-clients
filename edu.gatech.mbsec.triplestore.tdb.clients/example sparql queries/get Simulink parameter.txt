@@ -1,6 +1,6 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 			PREFIX simulink: <http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#> 
-			PREFIX simulink_parameter: <http://www.mathworks.com/products/simulink/Parameter/> 
+			PREFIX simulink_parameter: <http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#Parameter/> 
 
 			SELECT ?simulinkResource ?value 
 			WHERE {

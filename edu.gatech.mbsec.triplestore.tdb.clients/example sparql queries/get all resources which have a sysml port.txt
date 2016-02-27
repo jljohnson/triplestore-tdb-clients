@@ -1,5 +1,5 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-PREFIX sysml_block: <http://www.omg.org/sysml/Block/> 
+PREFIX sysml_block: <http://localhost:8080/oslc4jmagicdraw/services/sysml-rdfvocabulary#Block/> 
 SELECT ?resource ?object
 WHERE { 
     ?resource  sysml_block:fullPort ?object . 			
