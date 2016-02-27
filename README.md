@@ -123,19 +123,19 @@ triplestoreDirectory = C:/Users/Axel/git/triplestore/triplestore/mytriplestore
 4. 2 Options
   1. Option A: Populate triplestore with Simulink Blocks described as RDF on file (no need to run Simulink adapter)
     1. Expand the tbd.clients package
-    2. Right click PopulateTriplestoreWithSimulinkBlocksAsRDF.java-> Run As -> Java Application (the sample RDF file is located in the     folder named sample rdf)
+    2. Right click **PopulateTriplestoreWithSimulinkBlocksAsRDF.java**-> Run As -> Java Application (the sample RDF file is located in the folder named sample rdf)
   2. Option B: Populate triplestore with Simulink Blocks from running adapter 
-    1. Run the OSLC Simulink Adapter as described in the “Instructions to install and run the OSLC Simulink Adapter”
+    1. Run the OSLC Simulink Adapter as described in the [Instructions to install and run the OSLC Simulink Adapter](https://github.com/ld4mbse/oslc-adapter-simulink/blob/master/README.md)
     2. 2 Options
     3. Option B1: Retrieve Simulink Blocks from adapter and save them on file in RDF, and then populate triplestore based on RDF document 
       1.	Expand the adapter.clients package
-      2.	Right click GETSimulinkBlocksAndSaveAsRDF.java.java-> Run As -> Java Application
+      2.	Right click **GETSimulinkBlocksAndSaveAsRDF.java**-> Run As -> Java Application
       3.	In the console view, you should see the statement “Simulink blocks from adapter saved as RDF on file”
       4.	Expand the tdb.clients package
-      5.	Right click PopulateTriplestoreWithSimulinkBlocksAsRDF.java-> Run As -> Java Application
+      5.	Right click **PopulateTriplestoreWithSimulinkBlocksAsRDF.java**-> Run As -> Java Application
     2.	Option B2: Retrieve Simulink Blocks from adapter and directly populate triplestore based on in-memory POJOs
       1.	Expand the tdb.clients package
-      2.	Right click GETSimulinkBlocksAndPopulateTriplestoreWithPOJOs.java-> Run As -> Java Application
+      2.	Right click **GETSimulinkBlocksAndPopulateTriplestoreWithPOJOs.java**-> Run As -> Java Application
       2.	In the console view, you should see the statement “Simulink Blocks added to triplestore”
 
 Warning: if you try to populate the triplestore using the TDB API while Fuseki is running, you will get the following exception:
