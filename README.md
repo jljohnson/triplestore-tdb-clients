@@ -237,3 +237,56 @@ WHERE {
     ?simulinkBlock  rdf:type simulink:Block . 			
 }
 ```
+12.	Launch the query by clicking on the play button 
+13.	In the result window, you should see the list of Simulink blocks 
+14.	If you want to instead seach for all SysML blocks, type this query:
+ ```text
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX sysml: <http://localhost:8181/oslc4jmagicdraw/services/rdfvocabulary#>  
+SELECT ?sysmlBlock 
+WHERE { 
+    ?sysmlBlock  rdf:type sysml:Block . 			
+}
+```
+15.	If you want to instead search for all MBSE blocks, including SysML and Simulink blocks, type this query:
+ ```text
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX mbse: <http://eclipse.org/MBSE/> 
+SELECT ?block 
+WHERE { 
+    ?block  rdf:type mbse:Block . 			
+}
+```
+16.	In the result window, you should see the list of all blocks, including SysML and Simulink blocks
+
+###13.	Querying triplestore for Simulink blocks via SPARQL endpoint using a Java client
+
+1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+2.	Expand the edu.gatech.mbsec.triplestore.tdb.clients project
+3.	Expand the src/main/java folder
+4.	Expand the fuseki.clients package
+5.	Right click **QueryTriplestoreForSimulinkBlocksThroughSPARQLEndpoint.java**-> Run As -> Java Application
+6.	In the console view, you should see the URIs of resources of type Simulink block 
+
+###14.		Deleting all triples in triplestore via SPARQL endpoint using a Java client
+
+1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+2.	Expand the edu.gatech.mbsec.triplestore.tdb.clients project
+3.	Expand the src/main/java folder
+4.	Expand the fuseki.clients package
+5.	Right click **DeleteAllTriplesInTriplestoreThroughSPARQLEndpoint.java**-> Run As -> Java Application
+6.	In the console view, you should see the statement “All triples deleted in triplestore”
+
+###15.	Adding a triple to the triplestore via SPARQL endpoint using a Java client
+
+1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+2.	Expand the edu.gatech.mbsec.triplestore.tdb.clients project
+3.	Expand the src/main/java folder
+4.	Expand the fuseki.clients package
+5.	Right click **AddSimulinkBlockToTriplestoreThroughSPARQLEndpoint.java**-> Run As -> Java Application
+6.	In the console view, you should see the statement “Triple added to triplestore”
+
+###16.		Closing Fuseki as SPARQL HTTP endpoint to the triplestore 
+
+1.	In the command prompt which launched Fuseki, type Ctrl +C
+2.	Confirm that you want to stop Fuseki by typing Y
