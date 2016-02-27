@@ -69,12 +69,12 @@ and show value of MagicDraw value properties saved in the triplestore.
 Note: after launching Fuseki, you can no longer perform SPARQL queries against the triplestore using the Java API. Every interaction with the triplestore has to go through the SPARQL HTTP endpoint of Fuseki. 
 
 
-#Seeting up an RDF Triplestore and SPARQL HTTP endpoint
+#RDF Triplestore and SPARQL HTTP endpoint
 
-##Instructions to install and run a triplestore and a SPARQL endpoint to send queries
+##Instructions to install and run RDF triplestore and  SPARQL HTTP endpoint
 
 
-###1.	Downloading the triplestore repository
+###1.	Downloading the triplestore-tdb-clients repository
 
 1. Open the Git Repositories View (Window -> Show View -> type “Git Repositories” in the search field)
 2. Click on the Clone Repository icon  
@@ -92,3 +92,53 @@ Note: after launching Fuseki, you can no longer perform SPARQL queries against t
 5. Right click pom.xml -> Run As -> Maven install 
 6.	If there is a red error mark next to the triplestore project, select the project. Right-click->Maven->Update Project… and click OK 
 
+###3.	Configuring triplestore location
+
+1. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer). By default, it is already visible at the left of the screen.
+2. Select the just created triplestore project and expand it
+3. Choose an empty folder as triplestore location, such as the mytriplestore folder located in the Eclipse triplestore project. Your user account needs to have read/write permission to that folder. 
+4. In the Project Explorer view, expand the triplestore Eclipse project, and expand the triplestore configuration folder
+5. Open the config.properties file 
+6. Specify the location of the triplestore without trailing slash at the end, for example
+ ```text
+triplestoreDirectory = C:/Users/Axel/git/triplestore/triplestore/mytriplestore
+```
+
+###4.	Creating triplestore 
+
+1. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+2. Expand the triplestore project
+3. Expand the src/main/java folder
+4. Expand the tbd.clients package
+5. Right click **CreateTriplestore.java** -> Run As -> Java Application
+6. In the console view, you should see the statement “Triplestore created”
+7. To manually verify that the triplestore was created, you can notice the addition of new files in your triplestore folder. If you are verifying the triplestore folder content in the Eclipse Project Explorer view, you may need to right-click on your triplestore folder, and click on Refresh before verifying its content. 
+8. If you decide to later delete the triplestore and start from scratch, one option is to delete all the files in your triplestore folder and start off with a new empty triplestore folder. 
+
+###5.	Populating triplestore with Simulink Blocks
+
+1. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+2. Expand the triplestore project
+3. Expand the src/main/java folder
+4. 2 Options
+  1. Option A: Populate triplestore with Simulink Blocks described as RDF on file (no need to run Simulink adapter)
+    1. Expand the tbd.clients package
+    2. Right click PopulateTriplestoreWithSimulinkBlocksAsRDF.java-> Run As -> Java Application (the sample RDF file is located in the     folder named sample rdf)
+  2. Option B: Populate triplestore with Simulink Blocks from running adapter 
+    1. Run the OSLC Simulink Adapter as described in the “Instructions to install and run the OSLC Simulink Adapter”
+    2. 2 Options
+    3. Option B1: Retrieve Simulink Blocks from adapter and save them on file in RDF, and then populate triplestore based on RDF document 
+      1.	Expand the adapter.clients package
+      2.	Right click GETSimulinkBlocksAndSaveAsRDF.java.java-> Run As -> Java Application
+      3.	In the console view, you should see the statement “Simulink blocks from adapter saved as RDF on file”
+      4.	Expand the tdb.clients package
+      5.	Right click PopulateTriplestoreWithSimulinkBlocksAsRDF.java-> Run As -> Java Application
+    2.	Option B2: Retrieve Simulink Blocks from adapter and directly populate triplestore based on in-memory POJOs
+      1.	Expand the tdb.clients package
+      2.	Right click GETSimulinkBlocksAndPopulateTriplestoreWithPOJOs.java-> Run As -> Java Application
+      2.	In the console view, you should see the statement “Simulink Blocks added to triplestore”
+
+Warning: if you try to populate the triplestore using the TDB API while Fuseki is running, you will get the following exception:
+Exception in thread "main" com.hp.hpl.jena.tdb.TDBException: Can't open database at location ... as it is already locked by the process with PID 7388.  TDB databases do not permit concurrent usage across JVMs so in order to prevent possible data corruption you cannot open this location from the JVM that does not own the lock for the dataset
+
+Note: If Fuseki is running, you can only populate the triplestore through Fuseki.
