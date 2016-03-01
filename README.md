@@ -17,8 +17,13 @@ Last updated by Axel Reichwein (axel.reichwein@koneksys.com) 				February 26, 20
 3. In Eclipse: Launch MagicDraw adapter (Maven configuration named oslc adapter for magicDraw tomcat run)
 4. In Eclipse: Launch Simulink adapter (Maven configuration named oslc adapter for simulink)
 5. In Eclipse: Launch AMESim adapter (Maven configuration named oslc4jamesim-wink tomcat run)
-6. In Eclipse: In project triplestore in package tdb.clients.sync.magicdraw.withrevision, run Java application **MagicDrawAdapterAndTDBSubversionSyncClientWithRevision.java**
-7. In Browser: have tabs already open with following URLs
+6. Specify the location of your triplestore in the config.properties file under edu.gatech.mbsec.triplestore.tdb.clients/configuration. As an example displayed below, the location of the triplestore is specified to be
+ ```text
+C:\Users\Axel\git\triplestore\triplestore\mytriplestore5
+ ```  
+ *Note: The file path can contain backslashes. Warning: Do not put quotes around the file path and add nothing at the end!*
+7. In Eclipse: In project triplestore in package tdb.clients.sync.magicdraw.withrevision, run Java application **MagicDrawAdapterAndTDBSubversionSyncClientWithRevision.java**
+8. In Browser: have tabs already open with following URLs
 
 -	[http://localhost:8080/oslc4jmagicdraw/services/svnfilepublisher](http://localhost:8080/oslc4jmagicdraw/services/svnfilepublisher)
 -	[http://localhost:8181/oslc4jsimulink/services/svnfilepublisher](http://localhost:8181/oslc4jsimulink/services/svnfilepublisher)
