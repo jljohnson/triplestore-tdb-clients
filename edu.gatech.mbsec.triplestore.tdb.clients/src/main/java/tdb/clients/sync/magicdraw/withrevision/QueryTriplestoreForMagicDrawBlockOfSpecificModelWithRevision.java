@@ -40,7 +40,7 @@ public class QueryTriplestoreForMagicDrawBlockOfSpecificModelWithRevision {
 //			"FILTER ( regex(str(?magicdrawResource), \"---revision8\") ) " +
 //			"FILTER ( regex(str(?magicdrawResource), \"/services/httpskoneksys118080svnrepository3test1test2test3---sldemo_househeat\") ) " +
 			"    ?magicdrawResource  sysml:NamedElement_name ?name . " +
-			"FILTER ( regex(str(?magicdrawResource), \"/services/httpskoneksys118080svnmagicdrawrepository---Wired_Camera_Example/blocks/Blocks::Camera\") ) " +
+			"FILTER ( regex(str(?magicdrawResource), \"---Wired_Camera_Example/blocks/Blocks::Camera\") ) " +
 			"      }";
 		Query query = QueryFactory.create(queryString);
 

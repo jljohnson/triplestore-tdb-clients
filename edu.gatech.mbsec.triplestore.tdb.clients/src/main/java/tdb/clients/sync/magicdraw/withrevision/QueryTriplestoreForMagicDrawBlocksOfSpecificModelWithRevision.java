@@ -36,7 +36,7 @@ public class QueryTriplestoreForMagicDrawBlocksOfSpecificModelWithRevision {
 //			"SELECT ?magicdrawResource ?name " +
 			"WHERE {" +
 			"    ?magicdrawResource  ?p ?o. " +	
-			"FILTER ( regex(str(?magicdrawResource), \"httpskoneksys118080svnmagicdrawrepository---Wired_Camera_Example/blocks/Blocks::Camera\") ) " +
+			"FILTER ( regex(str(?magicdrawResource), \"magicdrawrepository---Wired_Camera_Example/blocks/Blocks::Camera\") ) " +
 //			"FILTER ( regex(str(?magicdrawResource), \"---revision2\") ) " +
 			"      }";
 		Query query = QueryFactory.create(queryString);

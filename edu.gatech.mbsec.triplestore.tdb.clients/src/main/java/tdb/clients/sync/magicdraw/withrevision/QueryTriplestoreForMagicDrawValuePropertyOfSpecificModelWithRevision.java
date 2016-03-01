@@ -30,11 +30,11 @@ public class QueryTriplestoreForMagicDrawValuePropertyOfSpecificModelWithRevisio
 		// Create a new query
 		String queryString = 
 			"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-			"PREFIX sysml: <http://www.omg.org/sysml/> " +
-			"PREFIX sysml_valueproperty: <http://www.omg.org/sysml/ValueProperty/> " +
+			"PREFIX sysml: <http://localhost:8080/oslc4jmagicdraw/services/sysml-rdfvocabulary#> " +
+			"PREFIX sysml_valueproperty: <http://localhost:8080/oslc4jmagicdraw/services/sysml-rdfvocabulary#ValueProperty/> " +
 			"SELECT DISTINCT ?magicdrawResource ?defaultValue " +
 			"WHERE {" +
-			"    ?magicdrawResource  sysml_valueproperty:defaultValue ?defaultValue . " +
+			"    ?magicdrawResource  sysml:ValueProperty_defaultValue ?defaultValue . " +
 			"FILTER ( regex(str(?magicdrawResource), \"Wired_Camera_Example/valueproperties/Blocks::Optical_Assembly::aperture\") ) " +
 			"      }";
 		Query query = QueryFactory.create(queryString);
