@@ -63,7 +63,11 @@ C:\Users\Axel\git\triplestore\triplestore\mytriplestore5
 8. In Browser: show with postman rest client value of MagicDraw value property as OSLC resource in RDF/XML and JSON
 9. In Eclipse: In project triplestore in package tdb.clients.sync.magicdraw.withrevision, run Java application **QueryTriplestoreForMagicDrawValuePropertyOfSpecificModelWithRevision.java**
 and show value of MagicDraw value properties saved in the triplestore. 
-10.	In Eclipse: In project triplestore, run batch file named run **fuseki.bat**
+10.	In Eclipse: In project triplestore, open the file **fuseki.bat** in the text editor. Right-Click-> Open With... -> Text Editor. Edit the location of the triplestore in the batch file. Example: 
+ ```text
+ --loc=C:\Users\Axel\git\triplestore-tdb-clients-jan26-2016\edu.gatech.mbsec.triplestore.tdb.clients\mytriplestore
+ ```
+. Run batch file named run **fuseki.bat**. Right-Click-> Open With... -> System Editor.
 11.	In browser, go to page [http://localhost:3030/](http://localhost:3030/) 
 12.	In Eclipse: In project triplestore, copy SPARQL query located in file get SysML value properties.txt in the folder example sparql queries
 13.	In browser, at page [http://localhost:3030/](http://localhost:3030/), go to Query and enter SPARQL query text, and click on play. Query results will display MagicDraw SysML value properties saved in triplestore having different revision numbers and values
