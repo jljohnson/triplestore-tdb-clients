@@ -47,19 +47,19 @@ C:\Users\Axel\git\triplestore\triplestore\mytriplestore5
 7. In Browser: show value of MagicDraw value property as OSLC resource in HTML format 
 8. In Browser: show with postman rest client value of MagicDraw value property as OSLC resource in RDF/XML and JSON
 9. In Eclipse: In project triplestore, explain that your local triplestore (RDF database) is saved in the folder **mytriplestore** and that it can be queried using SPARQL, which is similar to SQL. Explain that the triplestore has been populated with the resources from the running OSLC adapter (step #6 in last section). Explain that you will perform a SPARQL query to retrieve the MagicDraw value property saved in the triplestore
-10.	In Eclipse: In project triplestore in package tdb.clients.sync.magicdraw.withrevision, run Java application **QueryTriplestoreForMagicDrawValuePropertyOfSpecificModelWithRevision.java**
-11.	and show value of MagicDraw value property saved in the triplestore in the Eclipse console window. 
+10.	In Eclipse: In project triplestore in package tdb.clients.sync.magicdraw.withrevision, run Java application **QueryTriplestoreForMagicDrawValuePropertyOfSpecificModelWithRevision.java** and show value of MagicDraw value property saved in the triplestore in the Eclipse console window. 
+11.	Alternatively, n project triplestore in package tdb.clients.sync.magicdraw.withrevision, run Java application **QueryTriplestoreForMagicDrawBlockOfSpecificModelWithRevision.java** and show names of MagicDraw SysML blocks saved in the triplestore in the Eclipse console window. 
 
 
 ####Demo automatic syncing between Subversion, adapters and triplestore
 
-1. In MagicDraw: change value of MagicDraw value property
+1. In MagicDraw: change value of MagicDraw value property. Alternatively, or in addition, change the name of a SysML block.
 2. With your SVN client, perform a commit operation. Wait for logging statement indicating correct commit operation. If you do not have a SVN commit client, update and run the Java application **MagicDrawCommitClient.java** located in the edu.gatech.mbsec.subversion.client project of the subversion-client repository.
 3. In Browser: Show Subversion repository with MagicDraw files. Example: https://koneksys1:18080/svn/repository3/
 4. In Browser: Show revision of Subversion repository containing Magicdraw files. Revision number should be +1
 5. Wait for MagicDraw adapter to finish reloading files from Subversion server
-6. In Browser: Show revision of specific MagicDraw file published by MagicDraw adapter. Example:  http://localhost:8080/oslc4jmagicdraw/services/subversionfiles/httpskoneksys118080svnmagicdrawrepository---Wired_Camera_Example.mdzip 
-7. In Browser: show updated value of MagicDraw value property as OSLC resource in HTML format 
+6. In Browser: Show revision of specific MagicDraw file published by MagicDraw adapter. Example:  [http://localhost:8080/oslc4jmagicdraw/services/subversionfiles/httpskoneksys118080svnmagicdrawrepository---Wired_Camera_Example.mdzip](http://localhost:8080/oslc4jmagicdraw/services/subversionfiles/httpskoneksys118080svnmagicdrawrepository---Wired_Camera_Example.mdzip) 
+7. In Browser: show updated value of MagicDraw value property as OSLC resource in HTML format. Example:  [http://localhost:8080/oslc4jmagicdraw/services/httpswdxcnd519309s.jdnet.deere.comsvnmagicdrawrepository---Wired_Camera_Example/valueproperties/Blocks::Optical_Assembly::aperture](http://localhost:8080/oslc4jmagicdraw/services/httpswdxcnd519309s.jdnet.deere.comsvnmagicdrawrepository---Wired_Camera_Example/valueproperties/Blocks::Optical_Assembly::aperture). Alternatively, you can show the updated name of MagicDraw SysML block in HTML format. Example: [http://localhost:8080/oslc4jmagicdraw/services/httpswdxcnd519309s.jdnet.deere.comsvnmagicdrawrepository---Wired_Camera_Example/blocks](http://localhost:8080/oslc4jmagicdraw/services/httpswdxcnd519309s.jdnet.deere.comsvnmagicdrawrepository---Wired_Camera_Example/blocks)
 8. In Browser: show with postman rest client value of MagicDraw value property as OSLC resource in RDF/XML and JSON
 9. In Eclipse: In project triplestore in package tdb.clients.sync.magicdraw.withrevision, run Java application **QueryTriplestoreForMagicDrawValuePropertyOfSpecificModelWithRevision.java**
 and show value of MagicDraw value properties saved in the triplestore. 
