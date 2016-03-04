@@ -70,12 +70,13 @@ and show value of MagicDraw value properties saved in the triplestore.
 . Run batch file named run **fuseki.bat**. Right-Click-> Open With... -> System Editor.
 11.	In browser, go to page [http://localhost:3030/](http://localhost:3030/) 
 12.	In Eclipse: In project triplestore, copy SPARQL query located in file get SysML value properties.txt in the folder example sparql queries
-13.	In browser, at page [http://localhost:3030/](http://localhost:3030/), go to Query and enter SPARQL query text, and click on play. Query results will display MagicDraw SysML value properties saved in triplestore having different revision numbers and values
-14.	In Eclipse: In project triplestore, copy SPARQL query located in file get all sysml blocks.txt in the folder example sparql queries
-15.	In browser, at page [http://localhost:3030/](http://localhost:3030/), go to Query and enter SPARQL query text, and click on play. Query results will display all MagicDraw SysML blocks saved in triplestore having different revision numbers 
-
+13.	In browser, at page [http://localhost:3030/](http://localhost:3030/), go to **Query** and enter SPARQL query text, and click on play. 
+14.	Example: In Eclipse, in project triplestore, copy SPARQL query located in file **get all sysml blocks.txt** in the folder example sparql queries. Query results will display all MagicDraw SysML blocks saved in triplestore having revision numbers
+15.	Example: In Eclipse, in project triplestore, copy SPARQL query located in file **get specific SysML value property.txt** in the folder example sparql queries. Query results will display specific MagicDraw SysML value properties saved in triplestore having revision numbers 
 
 Note: after launching Fuseki, you can no longer perform SPARQL queries against the triplestore using the Java API. Every interaction with the triplestore has to go through the SPARQL HTTP endpoint of Fuseki. 
+
+Similar Java applications can be found for realizing this syncing scenario with Simulink and AMESim OSLC resources. The respective ava applications contain then *Simulink* or *AMESim* instead of *MagicDraw* in their name. 
 
 
 #RDF Triplestore and SPARQL HTTP endpoint
