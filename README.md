@@ -17,13 +17,22 @@ Last updated by Axel Reichwein (axel.reichwein@koneksys.com) 				February 26, 20
 3. In Eclipse: Launch MagicDraw adapter (Maven configuration named oslc adapter for magicDraw tomcat run)
 4. In Eclipse: Launch Simulink adapter (Maven configuration named oslc adapter for simulink)
 5. In Eclipse: Launch AMESim adapter (Maven configuration named oslc4jamesim-wink tomcat run)
-6. Specify the location of your triplestore in the config.properties file under edu.gatech.mbsec.triplestore.tdb.clients/configuration. As an example displayed below, the location of the triplestore is specified to be
+6. In Eclipse: In the folder named **svn hook script**, copy the **post-commit.bat** into the hooks folder of your svn repository. Example: 
+ ```text
+C:\apps\csvn\data\repositories\magicdrawrepository\hooks
+```
+. Edit the **post-commit.bat** file to refer to the appropriate adapter-specific service. Example for the OSLC MagicDraw adapter
+ ```
+http://localhost:8080/oslc4jmagicdraw/services/svnfilepublisher/republish
+```
+. This needs to be done for each repository that should be synced with a specific OSLC adapter such that a commit operation on a svn repository triggers the OSLC adapter to reconnect to the svn repo in order to retrieve any new updates
+7. Specify the location of your triplestore in the config.properties file under edu.gatech.mbsec.triplestore.tdb.clients/configuration. As an example displayed below, the location of the triplestore is specified to be
  ```text
 C:\Users\Axel\git\triplestore\triplestore\mytriplestore5
  ```  
  *Note: The file path can contain backslashes. Warning: Do not put quotes around the file path and add nothing at the end!*
-7. In Eclipse: In project triplestore in package tdb.clients.sync.magicdraw.withrevision, run Java application **MagicDrawAdapterAndTDBSubversionSyncClientWithRevision.java**
-8. In Browser: have tabs already open with following URLs
+8. In Eclipse: In project triplestore in package tdb.clients.sync.magicdraw.withrevision, run Java application **MagicDrawAdapterAndTDBSubversionSyncClientWithRevision.java**
+9. In Browser: have tabs already open with following URLs
 
 -	[http://localhost:8080/oslc4jmagicdraw/services/svnfilepublisher](http://localhost:8080/oslc4jmagicdraw/services/svnfilepublisher)
 -	[http://localhost:8181/oslc4jsimulink/services/svnfilepublisher](http://localhost:8181/oslc4jsimulink/services/svnfilepublisher)
@@ -37,6 +46,8 @@ C:\Users\Axel\git\triplestore\triplestore\mytriplestore5
 ### 2. Start the demo
 
 ####Demo OSLC adapters supporting Subversion
+
+This demo refers to examples using OSLC MagicDraw SysML resources. However, the same demo can be performed for Simulink and AMESIm resources. Similar Java applications can be found for realizing this syncing scenario with Simulink and AMESim OSLC resources. The respective Java applications contain then *Simulink* or *AMESim* instead of *MagicDraw* in their name. 
 
 1. In Browser: Show Subversion repository with MagicDraw files. Example: https://koneksys1:18080/svn/repository3/
 2. In Browser: Show revision of Subversion repository containing Magicdraw files
@@ -76,7 +87,7 @@ and show value of MagicDraw value properties saved in the triplestore.
 
 Note: after launching Fuseki, you can no longer perform SPARQL queries against the triplestore using the Java API. Every interaction with the triplestore has to go through the SPARQL HTTP endpoint of Fuseki. 
 
-Similar Java applications can be found for realizing this syncing scenario with Simulink and AMESim OSLC resources. The respective ava applications contain then *Simulink* or *AMESim* instead of *MagicDraw* in their name. 
+
 
 
 #RDF Triplestore and SPARQL HTTP endpoint
